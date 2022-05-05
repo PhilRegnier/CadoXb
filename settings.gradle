@@ -1,0 +1,2 @@
+rootProject.name='CadoX'
+include ':app'
