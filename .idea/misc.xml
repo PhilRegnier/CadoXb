@@ -4,6 +4,9 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Android/workspace/CadoX - Fin TP2b/app/src/main/res/layout/activity_article_view.xml" value="0.30434782608695654" />
+        <entry key="..\:/Android/workspace/CadoX/app/src/main/res/layout/activity_main.xml" value="0.24427083333333333" />
+        <entry key="..\:/Android/workspace/CadoX/app/src/main/res/layout/fragment_detail.xml" value="0.10080645161290322" />
+        <entry key="..\:/Android/workspace/CadoX/app/src/main/res/layout/fragment_edit.xml" value="0.33" />
       </map>
     </option>
   </component>

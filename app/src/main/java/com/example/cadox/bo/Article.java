@@ -1,13 +1,14 @@
 package com.example.cadox.bo;
 
-import java.text.DateFormat;
+import android.os.Parcel;
+import android.os.Parcelable;
+
 import java.text.DecimalFormat;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
-import java.util.Date;
 import java.util.Locale;
 
-public class Article {
+public class Article implements Parcelable {
     private int id;
     private String intitule;
     private String description;
@@ -16,6 +17,44 @@ public class Article {
     private LocalDate dateAchat;
     private byte niveau; // 0 - 5 (+ ou - satisfait)
     private String url;
+
+    protected Article(Parcel in) {
+        id = in.readInt();
+        intitule = in.readString();
+        description = in.readString();
+        prix = in.readFloat();
+        achete = in.readByte() != 0;
+        niveau = in.readByte();
+        url = in.readString();
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(id);
+        dest.writeString(intitule);
+        dest.writeString(description);
+        dest.writeFloat(prix);
+        dest.writeByte((byte) (achete ? 1 : 0));
+        dest.writeByte(niveau);
+        dest.writeString(url);
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    public static final Creator<Article> CREATOR = new Creator<Article>() {
+        @Override
+        public Article createFromParcel(Parcel in) {
+            return new Article(in);
+        }
+
+        @Override
+        public Article[] newArray(int size) {
+            return new Article[size];
+        }
+    };
 
     public int getId() { return id; }
 
@@ -88,6 +127,8 @@ public class Article {
         this.url = url;
     }
 
+    public Article(){}
+
     public Article(int id, String intitule, String description, float prix, byte niveau, String url) {
         this.id = id;
         this.intitule = intitule;
@@ -99,5 +140,6 @@ public class Article {
         this.achete = false;
         this.dateAchat = null;
     }
+
 
 }

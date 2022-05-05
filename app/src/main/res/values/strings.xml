@@ -2,15 +2,14 @@
     <string name="app_name">CadoX</string>
     <string name="description">description article</string>
     <string name="article_view_title">DETAIL D\'UN ARTICLE</string>
-
     <string name="article_view_dateachat">acheté le : </string>
-
     <string name="alert_dialog_title">Modifier</string>
     <string name="alert_dialog_msg">Souhaitez vous vraiment modifier cet article ?</string>
     <string name="yes">Oui</string>
     <string name="no">Non</string>
-
     <string name="snackbar_msg">envoyer le message ?</string>
     <string name="snackbar_action">envoyer</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="edit_article_view_title">Modifier l\'article</string>
 
 </resources>
